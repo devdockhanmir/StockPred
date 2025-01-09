@@ -53,7 +53,7 @@ class DataLoader():
             y_batch = []
             for b in range(batch_size):
                 if i >= (self.len_train - seq_len):
-                    # stop-condition for a smaller final batch if data doesn't divide evenly
+                    # stop-condition for a smaller final batch if data doesn't divide evenly adn test it accordingly
                     yield np.array(x_batch), np.array(y_batch)
                     i = 0
                 x, y = self._next_window(i, seq_len, normalise)
